@@ -1,197 +1,183 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Matúš Varga | Digital Business Card</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matúš Varga</title>
 
-<style>
-:root {
-    --primary: #2563eb;
-    --primary-light: #3b82f6;
-    --bg: #f8fafc;
-    --card: #ffffff;
-    --text: #0f172a;
-    --muted: #64748b;
-    --border: #e2e8f0;
-}
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+        :root {
+            --primary: #2563eb;
+            --text: #0f172a;
+            --secondary: #64748b;
+            --background: #f8fafc;
+            --card: rgba(255, 255, 255, 0.85);
+        }
 
-body {
-    font-family: Inter, Segoe UI, Arial, sans-serif;
-    background: linear-gradient(135deg, #eff6ff 0%, #f8fafc 100%);
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 24px;
-    color: var(--text);
-}
+        body {
+            font-family: "Segoe UI", sans-serif;
+            background: linear-gradient(135deg, #dbeafe, #f8fafc);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            color: var(--text);
+        }
 
-.card {
-    width: 100%;
-    max-width: 780px;
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 24px;
-    padding: 48px;
-    box-shadow: 0 20px 50px rgba(15, 23, 42, 0.08);
-}
+        .card {
+            width: 100%;
+            max-width: 850px;
+            background: var(--card);
+            backdrop-filter: blur(10px);
+            border-radius: 24px;
+            padding: 50px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+            text-align: center;
+        }
 
-.header {
-    margin-bottom: 32px;
-}
+        .profile-pic {
+            width: 170px;
+            height: 170px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid white;
+            box-shadow: 0 10px 30px rgba(37,99,235,0.25);
+            margin-bottom: 24px;
+        }
 
-.name {
-    font-size: clamp(2.2rem, 5vw, 3.5rem);
-    font-weight: 800;
-    line-height: 1.1;
-    margin-bottom: 10px;
-}
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
 
-.headline {
-    font-size: 1.15rem;
-    color: var(--primary);
-    font-weight: 600;
-}
+        .headline {
+            color: var(--primary);
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 32px;
+        }
 
-.about {
-    margin: 32px 0;
-}
+        .about {
+            max-width: 650px;
+            margin: 0 auto 30px;
+            line-height: 1.8;
+            font-size: 1.05rem;
+            color: #334155;
+        }
 
-.about h2,
-.quote h2,
-.connect h2 {
-    font-size: 0.95rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: var(--muted);
-    margin-bottom: 12px;
-}
+        .quote {
+            background: white;
+            padding: 24px;
+            border-radius: 16px;
+            border-left: 5px solid var(--primary);
+            margin: 30px auto;
+            max-width: 650px;
+        }
 
-.about p {
-    font-size: 1.05rem;
-    line-height: 1.8;
-    color: #334155;
-}
+        .quote p {
+            font-style: italic;
+            font-size: 1.1rem;
+        }
 
-.quote {
-    margin: 32px 0;
-    padding: 24px;
-    background: #f8fafc;
-    border-left: 4px solid var(--primary);
-    border-radius: 12px;
-}
+        .links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 35px;
+        }
 
-.quote-text {
-    font-size: 1.1rem;
-    font-style: italic;
-    line-height: 1.6;
-}
+        .btn {
+            text-decoration: none;
+            color: white;
+            background: var(--primary);
+            padding: 14px 24px;
+            border-radius: 12px;
+            font-weight: 600;
+            transition: all 0.25s ease;
+        }
 
-.connect {
-    margin-top: 40px;
-}
+        .btn:hover {
+            transform: translateY(-3px);
+            background: #1d4ed8;
+        }
 
-.links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 14px;
-    margin-top: 12px;
-}
+        .footer {
+            margin-top: 40px;
+            color: var(--secondary);
+            font-size: 0.95rem;
+        }
 
-.link-btn {
-    text-decoration: none;
-    color: white;
-    background: var(--primary);
-    padding: 14px 20px;
-    border-radius: 12px;
-    font-weight: 600;
-    transition: 0.25s ease;
-}
+        @media (max-width: 768px) {
+            .card {
+                padding: 35px 25px;
+            }
 
-.link-btn:hover {
-    background: var(--primary-light);
-    transform: translateY(-2px);
-}
+            h1 {
+                font-size: 2.2rem;
+            }
 
-.footer {
-    margin-top: 40px;
-    padding-top: 24px;
-    border-top: 1px solid var(--border);
-    color: var(--muted);
-    font-size: 0.95rem;
-}
+            .profile-pic {
+                width: 140px;
+                height: 140px;
+            }
 
-@media (max-width: 640px) {
-    .card {
-        padding: 32px 24px;
-    }
+            .links {
+                flex-direction: column;
+            }
 
-    .links {
-        flex-direction: column;
-    }
-
-    .link-btn {
-        text-align: center;
-    }
-}
-</style>
+            .btn {
+                width: 100%;
+            }
+        }
+    </style>
 </head>
-
 <body>
 
-<div class="card">
+    <div class="card">
+        <img src="profile.jpg" alt="Matúš Varga" class="profile-pic">
 
-    <div class="header">
-        <h1 class="name">Matúš Varga</h1>
+        <h1>Matúš Varga</h1>
+
         <p class="headline">Communicative enthusiast</p>
-    </div>
 
-    <section class="about">
-        <h2>About Me</h2>
-        <p>
-            I love networking and talking to people who want to make the world a better place.
-            I enjoy building meaningful connections, exchanging ideas, and learning from
-            diverse perspectives.
-        </p>
-    </section>
+        <div class="about">
+            <p>
+                I love networking and talking to people who want to make the world a better place.
+                Building meaningful relationships, exchanging ideas, and helping others solve
+                problems is what motivates me every day.
+            </p>
+        </div>
 
-    <section class="quote">
-        <h2>Personal Philosophy</h2>
-        <p class="quote-text">
-            “I see stuff, see the issue, I try to make it go away.”
-        </p>
-    </section>
-
-    <section class="connect">
-        <h2>Let's Connect</h2>
+        <div class="quote">
+            <p>"I see stuff, see the issue, I try to make it go away."</p>
+        </div>
 
         <div class="links">
-            <a class="link-btn" href="https://www.linkedin.com/in/matus-varga05/" target="_blank">
+            <a href="https://www.linkedin.com/in/matus-varga05/" target="_blank" class="btn">
                 LinkedIn
             </a>
 
-            <a class="link-btn" href="https://github.com/matus-varga-dell" target="_blank">
+            <a href="https://github.com/matus-varga-dell" target="_blank" class="btn">
                 GitHub
             </a>
 
-            <a class="link-btn" href="mailto:matus.varga@dell.com">
-                Email Me
+            <a href="mailto:matus.varga@dell.com" class="btn">
+                Email
             </a>
         </div>
-    </section>
 
-    <div class="footer">
-        University Student • Intern • Open to meaningful conversations
+        <div class="footer">
+            University Student • Intern • Open to Connecting
+        </div>
     </div>
-
-</div>
 
 </body>
 </html>
