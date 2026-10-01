@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Matúš Varga | Digital Business Card</title>
+
+<style>
+:root {
+    --primary: #2563eb;
+    --primary-light: #3b82f6;
+    --bg: #f8fafc;
+    --card: #ffffff;
+    --text: #0f172a;
+    --muted: #64748b;
+    --border: #e2e8f0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Inter, Segoe UI, Arial, sans-serif;
+    background: linear-gradient(135deg, #eff6ff 0%, #f8fafc 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    color: var(--text);
+}
+
+.card {
+    width: 100%;
+    max-width: 780px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    padding: 48px;
+    box-shadow: 0 20px 50px rgba(15, 23, 42, 0.08);
+}
+
+.header {
+    margin-bottom: 32px;
+}
+
+.name {
+    font-size: clamp(2.2rem, 5vw, 3.5rem);
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 10px;
+}
+
+.headline {
+    font-size: 1.15rem;
+    color: var(--primary);
+    font-weight: 600;
+}
+
+.about {
+    margin: 32px 0;
+}
+
+.about h2,
+.quote h2,
+.connect h2 {
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--muted);
+    margin-bottom: 12px;
+}
+
+.about p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #334155;
+}
+
+.quote {
+    margin: 32px 0;
+    padding: 24px;
+    background: #f8fafc;
+    border-left: 4px solid var(--primary);
+    border-radius: 12px;
+}
+
+.quote-text {
+    font-size: 1.1rem;
+    font-style: italic;
+    line-height: 1.6;
+}
+
+.connect {
+    margin-top: 40px;
+}
+
+.links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 12px;
+}
+
+.link-btn {
+    text-decoration: none;
+    color: white;
+    background: var(--primary);
+    padding: 14px 20px;
+    border-radius: 12px;
+    font-weight: 600;
+    transition: 0.25s ease;
+}
+
+.link-btn:hover {
+    background: var(--primary-light);
+    transform: translateY(-2px);
+}
+
+.footer {
+    margin-top: 40px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 0.95rem;
+}
+
+@media (max-width: 640px) {
+    .card {
+        padding: 32px 24px;
+    }
+
+    .links {
+        flex-direction: column;
+    }
+
+    .link-btn {
+        text-align: center;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+    <div class="header">
+        <h1 class="name">Matúš Varga</h1>
+        <p class="headline">Communicative enthusiast</p>
+    </div>
+
+    <section class="about">
+        <h2>About Me</h2>
+        <p>
+            I love networking and talking to people who want to make the world a better place.
+            I enjoy building meaningful connections, exchanging ideas, and learning from
+            diverse perspectives.
+        </p>
+    </section>
+
+    <section class="quote">
+        <h2>Personal Philosophy</h2>
+        <p class="quote-text">
+            “I see stuff, see the issue, I try to make it go away.”
+        </p>
+    </section>
+
+    <section class="connect">
+        <h2>Let's Connect</h2>
+
+        <div class="links">
+            <a class="link-btn" href="https://www.linkedin.com/in/matus-varga05/" target="_blank">
+                LinkedIn
+            </a>
+
+            <a class="link-btn" href="https://github.com/matus-varga-dell" target="_blank">
+                GitHub
+            </a>
+
+            <a class="link-btn" href="mailto:matus.varga@dell.com">
+                Email Me
+            </a>
+        </div>
+    </section>
+
+    <div class="footer">
+        University Student • Intern • Open to meaningful conversations
+    </div>
+
+</div>
+
+</body>
+</html>
